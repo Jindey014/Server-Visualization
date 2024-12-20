@@ -1,9 +1,9 @@
-# 📦 Streamlit App Starter Kit 
+# 📦 Offline Server Visualization 
 ```
 ⬆️ (Replace above with your app's name)
 ```
 
-Description of the app ...
+This is an app to visualize the server setup all over Nepal
 
 ## Demo App
 
