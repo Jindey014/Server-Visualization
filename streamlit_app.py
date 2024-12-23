@@ -78,10 +78,12 @@ total_district_counts = df_merged.groupby('District').size().reset_index(name='T
 # Merge the total_district_counts DataFrame back with df_merged
 df_merged = df_merged.merge(total_district_counts, on='District', how='left')
 
+st.write("Column Names:", df_merged.columns.tolist() )
+
 # Now df_merged has the 'Total District' column, which contains the total occurrences for each district across all years
 
 # Check the result
-st.write(df_merged[['District', 'Total District']])
+st.write(df_merged[['District', 'Total District_x','Total District_y']])
 
 
 # Filter data based on selections
@@ -215,8 +217,8 @@ with st.expander('Add Record'):
     if add_record:
 
         # Generate a new Serial Number (S.N)
-        if 'S.N' in df_merged.columns:
-            new_sn = df_merged['S.N'].max() + 1  # Get the max S.N and increment it
+        if 'S.N.' in df_merged.columns:
+            new_sn = df_merged['S.N.'].max() + 1  # Get the max S.N and increment it
         else:
             new_sn = 1  # Start from 1 if S.N doesn't exist
         #Create a new record
